@@ -1,4 +1,4 @@
-# 🌱 GreenBuilding-QA-LLM
+#  GreenBuilding-QA-LLM
 **基于 Qwen2.5-0.5B + QLoRA 微调的绿色建筑问答大模型**
 
 本项目旨在构建一个轻量、高效、可在普通消费级 GPU（如 GTX1060 6GB）上运行的专业绿色建筑问答模型。  
@@ -6,23 +6,20 @@
 
 ---
 
-## 🚀 项目特点
+##  项目特点
 
-### ✔ 绿色建筑领域专属知识  
+### 绿色建筑领域专属知识  
 使用自建数据集（如体形系数、窗墙比、U 值、SHGC 等）进行强化学习，模型对绿建设计问题具有强识别与回答能力。
 
-### ✔ 轻量 / 本地运行  
+###  轻量 / 本地运行  
 仅使用 **GTX1060 6GB** + QLoRA 即可完成训练与推理。
 
-### ✔ 本地可交互 ChatBot  
-使用 Gradio 生成网页端问答界面。
-
-### ✔ 可复现的完整训练流程  
+###  可复现的完整训练流程  
 提供训练脚本、推理脚本、Web UI 全流程。
 
 ---
 
-## 📂 目录结构
+##  目录结构
 
 GreenBuilding-QA-LLM/
  │
@@ -55,12 +52,8 @@ GreenBuilding-QA-LLM/
 ##  2. 环境配置
 
 ```
-conda create -n llm python=3.10 -y
+conda env create -f llm_env.yaml
 conda activate llm
-
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
-pip install transformers datasets peft accelerate bitsandbytes gradio
-
 ```
 
 ##  3. 微调模型
@@ -85,19 +78,7 @@ python model/infer_lora.py
 
 ------
 
-##  5. 启动 Web ChatBot
 
-```
-python app/web_ui.py
-```
-
-浏览器访问：
-
-```
-http://localhost:7860
-```
-
-即可体验绿建智能问答模型。
 
 ------
 
