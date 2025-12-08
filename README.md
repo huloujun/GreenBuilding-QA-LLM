@@ -51,10 +51,29 @@ GreenBuilding-QA-LLM/
 
 ##  2. 环境配置
 
-```
-conda env create -f llm_env.yaml
+### 1. 创建环境
+```bash
+conda create -n llm python=3.10 -y
 conda activate llm
 ```
+
+### 2. 安装 PyTorch（根据显卡选择 CUDA 版本）
+
+```
+# RTX 40/30/20 系列（推荐）
+conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+
+# GTX 10 系列（1060/1080）
+# conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+```
+
+### 3. 安装项目依赖
+
+```
+pip install -r requirements_core.txt
+```
+
+
 
 ##  3. 微调模型
 
