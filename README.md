@@ -70,7 +70,8 @@ conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvi
 ### 3. 安装项目依赖
 
 ```
-pip install -r requirements_core.txt
+pip install transformers datasets accelerate peft bitsandbytes safetensors
+pip install huggingface-hub
 ```
 
 
