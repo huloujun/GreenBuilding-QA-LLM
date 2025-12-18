@@ -3,7 +3,7 @@
     {%- if messages[0]['role'] == 'system' %}
         {{- messages[0]['content'] }}
     {%- else %}
-        {{- 'You are a helpful assistant.' }}
+        {{- 'You are Qwen, created by Alibaba Cloud. You are a helpful assistant.' }}
     {%- endif %}
     {{- "\n\n# Tools\n\nYou may call one or more functions to assist with the user query.\n\nYou are provided with function signatures within <tools></tools> XML tags:\n<tools>" }}
     {%- for tool in tools %}
@@ -15,7 +15,7 @@
     {%- if messages[0]['role'] == 'system' %}
         {{- '<|im_start|>system\n' + messages[0]['content'] + '<|im_end|>\n' }}
     {%- else %}
-        {{- '<|im_start|>system\nYou are a helpful assistant.<|im_end|>\n' }}
+        {{- '<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n' }}
     {%- endif %}
 {%- endif %}
 {%- for message in messages %}
